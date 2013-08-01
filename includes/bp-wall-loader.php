@@ -118,6 +118,10 @@ class BP_Wall {
 	function bp_wall_remove_unused_menu() {
 		global $bp, $wp_admin_bar;
 
+		if ( !is_user_logged_in() ) 
+			return;
+		
+
 		$wp_admin_bar->remove_menu( "my-account-activity-friends" );
 		$wp_admin_bar->remove_menu( "my-account-activity-groups" );
 
@@ -206,14 +210,14 @@ class BP_Wall {
 	}
 	
 	/**
-	 * WRAPPER FUNCTION, WILL BE DEPRECATED
+	 * Check if a member with id $user_id  is my friend 
+	 * 
 	 */
-	function is_myfriend( $id )
-	{
+	function is_myfriend( $user_id ) {
 		global $bp;
 		$bp_loggedin_user_id = bp_loggedin_user_id();
 
-		return friends_check_friendship( $bp_loggedin_user_id, $id );
+		return friends_check_friendship( $bp_loggedin_user_id, $user_id );
 	}
 	
 	/**
