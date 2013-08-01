@@ -1,0 +1,79 @@
+li.activity-like-count {
+    padding: 4px 2px 1px 2px !important;
+    margin: 3px 0px !important;
+}
+
+li.has-comments div.activity-comments form.ac-form {
+    display:block;
+    margin:0 0 5px 0;
+}
+
+/*-
+.ac-form .ac-reply-avatar{
+    display:none;
+}
+*/
+
+
+.ac-form .ac-reply-avatar {
+}
+
+
+form .ac-reply-avatar img.avatar {
+    float: left;
+    margin: 0 3px 0 0 !important;
+    height: 25px;
+    width: 25px;
+}
+
+
+div.activity-comments form div.ac-reply-content{
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 5px;
+    height:30px;/* you may need to adjust height according to the one you choose for your textarea*/
+}
+
+#buddypress div.activity-comments form textarea, 
+div.activity-comments form textarea {
+    height: 18px !important;
+}
+div.activity-comments form input[type='submit']{
+    display:none;
+}
+
+/*on active/focus*/
+form .ac-reply-avatar{
+    float:left;
+    display: block !important;
+}
+
+form.active .ac-reply-avatar img.avatar {
+    float: left;
+    margin: 0 3px 0 0;
+    height: 25px;
+    width: 25px;
+}
+
+div.activity-comments form.active div.ac-reply-content{
+    height:auto;
+}
+
+form .ac-textarea{
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 2px !important;
+    padding-top:0;
+}
+
+form.active .ac-textarea{
+	font-size: 12px;
+    margin-bottom: 10px;
+    padding: 2px !important;
+    padding-top:0;
+}
+
+div.activity-comments form div.ac-reply-content{
+    margin-left: 30px !important;
+    padding-left: 2px;
+}
