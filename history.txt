@@ -3,4 +3,10 @@ Version 0.8 ( August 01, 2013 )
 
 - Initial Release.
 
+Version 0.8.1 ( August 03, 2013 )
+--------------------------------------------------------------
+
+- Fix error message on the sitewide activity screen.
+
+
 

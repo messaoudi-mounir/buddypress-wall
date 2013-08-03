@@ -43,5 +43,8 @@ https://github.com/dzmounir/buddypress-wall
 
 == Changelog ==
 
+= 0.8.1 =
+* Fix error message on the sitewide activity screen.
+
 = 0.8 =
 * Initial release.
