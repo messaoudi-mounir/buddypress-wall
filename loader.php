@@ -2,7 +2,7 @@
 /*
 Plugin Name: BuddyPress Wall
 Plugin URI: 
-Description: Turn your Buddypress Activity Component to a Facebook-style Wall. 
+Description: Turn your Buddypress Activity Component to a Facebook-style Wall.
 Profiles with Facebook-style walls
 Version: 0.8
 Requires at least:  WP 3.4, BuddyPress 1.5

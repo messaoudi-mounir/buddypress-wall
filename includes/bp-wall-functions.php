@@ -14,20 +14,23 @@ if ( !defined( 'ABSPATH' ) ) exit;
  *
  */
 function bp_wall_add_likes_comments() {
-	$actid = (int) bp_get_activity_id();
+	$activity_id = (int) bp_get_activity_id();
 	
-	if ( $actid === 0 )
+	if ( !isset( $activity_id ) || $activity_id == 0 )
 		return false;
 	
-	$count = (int) bp_activity_get_meta( $actid, 'favorite_count' );
+	$count = (int)bp_activity_get_meta( $activity_id, 'favorite_count' );
 	
-	if ( $count === 0 )
+	if ( $count == 0 )
 		return false;
-	
-	$subject = ($count == 1) ? 'person' : 'people';
-	$verb = ($count > 1) ? 'like' : 'likes';
-	
-	$like_html = "<ul><li class=\"activity-like-count\">$count $subject $verb this.</li></ul>";
-	
+
+	$like_html = false;
+
+	if ( $count == 1 )
+		$like_html = sprintf( __( '<ul><li class="activity-like-count">%s person like this.</li></ul>', 'bp-wall' ), number_format_i18n( $count ) );
+	elseif ( $count > 1 ) {
+		$like_html = sprintf( __( '<ul><li class="activity-like-count">%s people likes this.</li></ul>', 'bp-wall' ), number_format_i18n( $count ) );
+	}
+
 	echo $like_html;
 }

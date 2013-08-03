@@ -1,3 +1,8 @@
+/**
+ * BuddyPress Wall CSS
+ * 
+ */
+
 li.activity-like-count {
     padding: 4px 2px 1px 2px !important;
     margin: 3px 0px !important;
@@ -14,8 +19,8 @@ li.has-comments div.activity-comments form.ac-form {
 }
 */
 
-
 .ac-form .ac-reply-avatar {
+    display: block;
 }
 
 
@@ -36,8 +41,9 @@ div.activity-comments form div.ac-reply-content{
 
 #buddypress div.activity-comments form textarea, 
 div.activity-comments form textarea {
-    height: 18px !important;
+    height: 18px;
 }
+
 div.activity-comments form input[type='submit']{
     display:none;
 }
@@ -45,7 +51,7 @@ div.activity-comments form input[type='submit']{
 /*on active/focus*/
 form .ac-reply-avatar{
     float:left;
-    display: block !important;
+    display: block;
 }
 
 form.active .ac-reply-avatar img.avatar {
@@ -69,7 +75,7 @@ form .ac-textarea{
 form.active .ac-textarea{
 	font-size: 12px;
     margin-bottom: 10px;
-    padding: 2px !important;
+    padding: 2px ;
     padding-top:0;
 }
 

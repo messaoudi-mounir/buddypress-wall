@@ -31,8 +31,6 @@ class BP_Wall {
 
 	public $filter_qs = false;
 	
-	//public $cache;
-	
 	public $likes_store = array();
 
 	function __construct( $options = null ) {
@@ -49,10 +47,6 @@ class BP_Wall {
 
 		// Add body class
 		add_filter( 'body_class', array($this, 'add_body_class') );
-		
-		// Caching
-		//$this->cache = get_transient('bbwall_cacher');
-		//add_action( 'wp_shutdown', array($this, 'shutdown') );
 		
 		return $this;
 	}
@@ -82,7 +76,6 @@ class BP_Wall {
 	 * 
 	 */
 	function shutdown() {
-		//set_transient('bbwall_cacher', $this->cache);
 	}
 	
 	/**
@@ -121,7 +114,6 @@ class BP_Wall {
 		if ( !is_user_logged_in() ) 
 			return;
 		
-
 		$wp_admin_bar->remove_menu( "my-account-activity-friends" );
 		$wp_admin_bar->remove_menu( "my-account-activity-groups" );
 
@@ -129,6 +121,7 @@ class BP_Wall {
 		$activity_menu = $wp_admin_bar->get_node("my-account-activity");
 		$activity_menu->title = __("Wall", "bp-wall");
 		$wp_admin_bar->add_menu( $activity_menu );
+
 
 		$activity_favorites_menu = $wp_admin_bar->get_node("my-account-activity-favorites");
 		$activity_favorites_menu->title = __("My Likes", "bp-wall");

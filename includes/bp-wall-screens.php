@@ -1,82 +1,12 @@
 <?php
 
-/**
- * Catches any visits to the "Activity > Following" tab on a users profile.
- *
- * @uses bp_core_load_template() Loads a template file.
- */
-/*
-function bp_follow_screen_activity_following() {
-	bp_update_is_item_admin( is_super_admin(), 'activity' );
-	do_action( 'bp_follow_screen_activity_following' );
-	bp_core_load_template( apply_filters( 'bp_follow_screen_activity_following', 'members/single/home' ) );
-}
-
-if ( class_exists( 'BP_Theme_Compat' ) ) {
-    //mod:bp1.7
-    class BP_Wall_Theme_Compat {
-     
-        public function __construct() { 
-     
-            add_action( 'bp_setup_theme_compat', array( $this, 'is_bp_plugin' ) );
-        }
-     
-        public function is_bp_plugin() {
-           
-                // first we reset the post
-                add_action( 'bp_template_include_reset_dummy_post_data', array( $this, 'directory_dummy_post' ) );
-                // then we filter ‘the_content’ thanks to bp_replace_the_content
-                add_filter( 'bp_replace_the_content', array( $this, 'directory_content'    ) );
-
-
-        }
-
-
-        public function directory_dummy_post() {
-
-        }
-
-
-        public function directory_content() {
-            bp_buffer_template_part( 'members/single/activity' );
-        }
-    }
-     
-    new BP_Wall_Theme_Compat ();
-
-
-    function bp_wall_add_template_stack( $templates ) {
-        // if we're on a page of our plugin and the theme is not BP Default, then we
-        // add our path to the template path array
-        if ( !bp_wall_is_bp_default() ) {
-            $templates[] = BP_WALL_PLUGIN_DIR . '/includes/templates/';
-        }
-
-        return $templates;
-    }
-     
-    add_filter( 'bp_get_template_stack', 'bp_wall_add_template_stack', 10, 1 );
-}
-
-*/
-
-
-
-
+// Exit if accessed directly
+if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
- * bp_follow_load_template_filter()
+ * filter the activity home, member home and group home and replace them
+ * with the news templates 
  *
- * You can define a custom load template filter for your component. This will allow
- * you to store and load template files from your plugin directory.
- *
- * This will also allow users to override these templates in their active theme and
- * replace the ones that are stored in the plugin directory.
- *
- * If you're not interested in using template files, then you don't need this function.
- *
- * This will become clearer in the function bp_follow_screen_one() when you want to load
- * a template file.
  */
 
 function bp_wall_load_template_filter( $found_template, $templates ) {
@@ -88,7 +18,6 @@ function bp_wall_load_template_filter( $found_template, $templates ) {
         return $found_template; 
     }
 
-
 	$templates_dir = "/templates/bp-default/";
 	
     
@@ -96,6 +25,7 @@ function bp_wall_load_template_filter( $found_template, $templates ) {
 	//Only filter the template location when we're on the follow component pages.
 
 	//if (bp_wall_is_bp_default()) {
+    /*
 	if ( $templates[0] == "members/single/home.php") {
 		$found_template = dirname( __FILE__ ) . $templates_dir . 'members/single/home-wall.php';
 		return $found_template;
@@ -106,10 +36,35 @@ function bp_wall_load_template_filter( $found_template, $templates ) {
 		$found_template = dirname( __FILE__ ) . $templates_dir . 'groups/single/home-wall.php';
 		return $found_template;
 	}
-	//}
+     */
+    
+    if ( $templates[0] == "members/single/home.php" ) {
+        $template = 'members/single/home-wall.php';
+        if ( file_exists( STYLESHEETPATH . '/' . $template ) )
+            $found_template = STYLESHEETPATH . '/' . $template;
+        else
+            $found_template = dirname( __FILE__ ) . $templates_dir . $template;
 
-    //Only filter the template location when we're on the bp-plugin component pages.
-	//mod:bp1.7
+        return $found_template;
+
+    }elseif ( $templates[0] == "activity/index.php" ) {
+        $template = 'activity/index-wall.php';
+        if ( file_exists( STYLESHEETPATH . '/' . $template ) )
+            $found_template = STYLESHEETPATH . '/' . $template;
+        else
+            $found_template = dirname( __FILE__ ) . $templates_dir . $template;
+
+        return $found_template;
+
+    } elseif ( $templates[0] == "groups/single/home.php" )  {
+         $template = 'groups/single/home-wall.php';
+        if ( file_exists( STYLESHEETPATH . '/' . $template ) )
+            $found_template = STYLESHEETPATH . '/' . $template;
+        else
+            $found_template = dirname( __FILE__ ) . $templates_dir . $template;
+
+        return $found_template;
+    }
 
 	foreach ( (array) $templates as $template ) {
 		
@@ -125,10 +80,10 @@ function bp_wall_load_template_filter( $found_template, $templates ) {
 }
 add_filter( 'bp_located_template', 'bp_wall_load_template_filter', 10, 2 );
 
-
-
 /**
+* Load sub template
 * http://buddypress.trac.wordpress.org/ticket/2198
+* 
 */
 function bp_wall_load_sub_template( $template = false, $require_once = true ) {
 	if( empty( $template ) )
@@ -144,7 +99,10 @@ function bp_wall_load_sub_template( $template = false, $require_once = true ) {
     }
 }
 
-//mod:bp1.7
+/**
+ * Check if is buddypress default theme
+ * 
+ */
 function bp_wall_is_bp_default() {
     // if active theme is BP Default or a child theme, then we return true
     // as i was afraid a BuddyPress theme that is not relying on BP Default might
@@ -172,8 +130,8 @@ function bp_wall_is_bp_default() {
 }
 
 
-
 if ( class_exists( 'BP_Theme_Compat' ) ) {
+   
     //mod:bp1.7
     class BP_Wall_Theme_Compat {
      

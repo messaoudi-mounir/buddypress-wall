@@ -10,6 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 
 /**
+ * Replace the default buddypress Actions by a new actions
  * 
  */ 
 function bp_wall_actions(){
@@ -28,7 +29,6 @@ function bp_wall_actions(){
 
 		remove_action( 'wp_ajax_post_update', 'bp_legacy_theme_post_update' );
 		add_action( "wp_ajax_post_update", "bp_wall_ltheme_post_update" );
-
 
 	} else {
 
@@ -53,7 +53,12 @@ function bp_wall_actions(){
 }
 add_action( "init","bp_wall_actions", 5 );
 
-// This function will load the activity loop template when activity is requested via AJAX
+
+/**
+ * load the activity loop template when activity is requested via AJAX
+ * for default or child theme.
+ * 
+ */ 
 function bp_wall_dtheme_activity_template_loader() {
 	global $bp;
 
@@ -91,7 +96,12 @@ function bp_wall_dtheme_activity_template_loader() {
 	echo json_encode( $result );
 }
 
-// This function will load the activity loop template when activity is requested via AJAX
+
+/**
+ * Load the activity loop template when activity is requested via AJAX
+ * for legacy theme.
+ * 
+ */
 function bp_wall_ltheme_activity_template_loader() {
 	global $bp;
 
@@ -130,6 +140,8 @@ function bp_wall_ltheme_activity_template_loader() {
 }
 
 /**
+ * rocesses Activity updates received via a POST request
+ * on default or child theme.
  * 
  */ 
 function bp_wall_dtheme_post_update() {
@@ -174,10 +186,9 @@ function bp_wall_dtheme_post_update() {
 }
 
 /**
- * Processes Activity updates received via a POST request.
+ * Processes Activity updates received via a POST request
+ * on legacy theme.
  *
- * @return string HTML
- * @since BuddyPress (1.2)
  */
 function bp_wall_ltheme_post_update() {
 	// Bail if not a POST action
@@ -219,7 +230,7 @@ function bp_wall_ltheme_post_update() {
 }
 
 /**
- * This adds how many people liked an item
+ * Add how many people liked an item
  *
  */
 function bp_wall_add_like_action() {

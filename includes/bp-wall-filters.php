@@ -33,7 +33,7 @@ function bp_wall_read_filter( $action ) {
  * New Filter for activity stream
  *
  */
-function bp_wall_input_filter(&$activity) {
+function bp_wall_input_filter( &$activity ) {
 	global $bp, $bp_wall;
 	
 	$loggedin_user = $bp->loggedin_user;
@@ -47,8 +47,7 @@ function bp_wall_input_filter(&$activity) {
 	if ( ($bp->current_action == 'just-me' && $loggedin_user->id == $displayed_user->id) || $bp->current_action == 'forum' )
 	{
 		
-		if (!empty($activity->content))
-		{
+		if ( !empty($activity->content) ) {
 			$mentioned = bp_activity_find_mentions($activity->content);
 			$uids = array();
 			$usernames = array();
@@ -71,8 +70,7 @@ function bp_wall_input_filter(&$activity) {
 			$mentions_action = '';
 			
 			// It's mentioning one person
-			if($len == 1)
-			{
+			if($len == 1) {
 				$user_id = $displayed_user = bp_core_get_core_userdata( (int) $uids[0] );
 				$user_url  = '<a href="'.$loggedin_user->domain.'">'.$loggedin_user->fullname.'</a>';
 				$displayed_user_url  = '<a href="'.bp_core_get_userlink( $uids[0], false, true ).'">@'.$displayed_user->user_login.'</a>';
@@ -85,17 +83,17 @@ function bp_wall_input_filter(&$activity) {
 			{
 				$user_url  = '<a href="'.$loggedin_user->domain.'">'.$loggedin_user->fullname.'</a>';
 				$un = '@'.join(',@', $usernames);
-				$mentions_action = $user_url. " mentioned ".$len." people";
+				$mentions_action = $user_url. " mentioned " . $len . " people";
 			}
 			
 			// If it's a forum post let's define some forum topic text
 			if ( $bp->current_action == 'forum' )
 			{
-				$new_action = str_replace( ' replied to the forum topic', $mentions_action.' in the forum topic', $activity->action);
+				$new_action = str_replace( ' replied to the forum topic', $mentions_action . ' in the forum topic', $activity->action);
 			}
 			
 			// If it's a plublic message let's define that text as well
-			elseif ($len > 0) {
+			elseif ( $len > 0 ) {
 				$new_action = $user_url.$mentions_action.' in a public message';
 			}
 			
@@ -109,12 +107,15 @@ function bp_wall_input_filter(&$activity) {
 	
 	// It's a normal wall post because the displayed ID doesn't match the logged in ID
 	// And we're on activity page
-	elseif ( $bp->current_action == 'just-me' && $loggedin_user->id != $displayed_user->id ) {
+	elseif ( $bp->current_action == 'just-me' && 
+		     $loggedin_user->id != $displayed_user->id ) {
+
 		$user_url  = '<a href="'.$loggedin_user->domain.'">'.$loggedin_user->fullname.'</a>';
 		$displayed_user_url  = '<a href="'.$displayed_user->domain.'">'.$displayed_user->fullname.'\'s</a>';
 
 		// if a user is on his own page it is an update
-		$new_action = $user_url. " wrote on ". $displayed_user_url." Wall";
+		$new_action = sprintf( __( '%s1 wrote on %s2 Wall', 'bp-wall' ), $user_url, $displayed_user_url);
+		//$new_action = $user_url. " wrote on ". $displayed_user_url." Wall";
 	}
 	
 	if ( $new_action )
@@ -124,26 +125,28 @@ function bp_wall_input_filter(&$activity) {
 	
 }
 
+/**
+ * bp_ajax_querystring filter
+ * 
+ */ 
 function bp_wall_qs_filter( $qs ) {
 	global $bp, $bp_wall;
 
-	//echo $qs;
 	$action = $bp->current_action;
-	if ( $action != "just-me" )
-	{
+	if ( $action != "just-me" ) {
 		// if we're on a different page than wall pass qs as is
 		return $qs;
 	}
-	
-	// else modify it to include wall activities
+
+	//modify it to include wall activities
 
 	// see if we have a page string
 	$page_str  = preg_match("/page=\d+/", $qs, $m);
-	$page= intval(str_replace("page=", "", $m[0])); // if so grab the number
+	$page = intval(str_replace("page=", "", $m[0])); // if so grab the number
 
-	$activities = $bp_wall->get_wall_activities($page); // load activities for this page
-
-	$nqs = "include=$activities";
-
-	return $nqs;
+	// load the activities for this page
+	$activities = $bp_wall->get_wall_activities($page); 
+	$new_qs = "include=$activities";
+	return $new_qs;
+	
 }

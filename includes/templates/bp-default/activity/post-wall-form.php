@@ -19,7 +19,7 @@
 	<?php elseif (!bp_is_home() && !is_super_admin() && ( bp_is_user() && !$bp_wall->is_myfriend($bp->displayed_user->id) ) ) : ?>
 
 	<div id="message" class="bp-template-notice">
-		<p><?php printf( __( "You and %s are not friends. Request friendship to post to their Wall.", 'bp-wall' ), bp_get_displayed_user_fullname() ) ?></p>
+		<p><?php printf( __( "You and %s are not friends. Please request friendship to post to their Wall.", 'bp-wall' ), bp_get_displayed_user_fullname() ) ?></p>
 	</div>
 
     <?php elseif ( !is_super_admin()  && ( bp_is_group_home() && !bp_group_is_member() )  ) : ?>
