@@ -4,7 +4,7 @@ Plugin Name: BuddyPress Wall
 Plugin URI: 
 Description: Turn your Buddypress Activity Component to a Facebook-style Wall.
 Profiles with Facebook-style walls
-Version: 0.8.1
+Version: 0.8.2
 Requires at least:  WP 3.4, BuddyPress 1.5
 Tested up to: BuddyPress 1.7, 1.8
 License: GNU General Public License 2.0 (GPL) http://www.gnu.org/licenses/gpl.html
@@ -17,7 +17,7 @@ Network: true
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /*************************************************************************************************************
- --- BuddyPress Wall 0.8.1 ---
+ --- BuddyPress Wall 0.8.2 ---
  *************************************************************************************************************/
 
 // Define a constant that can be checked to see if the component is installed or not.
@@ -25,7 +25,7 @@ define( 'BP_WALL_IS_INSTALLED', 1 );
 
 // Define a constant that will hold the current version number of the component
 // This can be useful if you need to run update scripts or do compatibility checks in the future
-define( 'BP_WALL_VERSION', '0.8.1' );
+define( 'BP_WALL_VERSION', '0.8.2' );
 
 // Define a constant that we can use to construct file paths throughout the component
 define( 'BP_WALL_PLUGIN_DIR', dirname( __FILE__ ) );

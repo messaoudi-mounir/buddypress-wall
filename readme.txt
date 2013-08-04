@@ -3,7 +3,7 @@ Contributors: megainfo
 Tags: buddypress, activity, wall, facebook, facebook style, facebook comment system, wall mode, like, unlike
 Requires at least: WordPress 3.4, BuddyPress 1.5
 Tested up to: WordPress 3.5.1 / BuddyPress 1.8
-Stable tag: 0.8
+Stable tag: 0.8.2
 
 
 == Description ==
@@ -42,6 +42,10 @@ Or In GitHub
 https://github.com/dzmounir/buddypress-wall
 
 == Changelog ==
+
+= 0.8.2 =
+* Fix bug, personal Activity is Missing Load More Button.
+* Remove activity filter select from wall Page template
 
 = 0.8.1 =
 * Fix error message on the sitewide activity screen.

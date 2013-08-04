@@ -8,5 +8,10 @@ Version 0.8.1 ( August 03, 2013 )
 
 - Fix error message on the sitewide activity screen.
 
+Version 0.8.2 ( August 04, 2013 )
+--------------------------------------------------------------
+
+- Fix bug, personal Activity is Missing Load More Button.
+- Remove activity filter select from wall Page template
 
 

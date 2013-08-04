@@ -13,7 +13,9 @@ add_filter('bp_activity_can_comment_reply','__return_false');
 
 add_filter('bp_get_activity_action', 'bp_wall_read_filter');
 add_filter('bp_activity_after_save', 'bp_wall_input_filter');
+//add_filter('bp_legacy_theme_ajax_querystring', 'bp_wall_qs_filter',  99, 2 );
 add_filter('bp_ajax_querystring', 'bp_wall_qs_filter', 999);
+
 
 /**
  * filters wall actions
@@ -129,24 +131,23 @@ function bp_wall_input_filter( &$activity ) {
  * bp_ajax_querystring filter
  * 
  */ 
-function bp_wall_qs_filter( $qs ) {
+function bp_wall_qs_filter( $query_string ) {
 	global $bp, $bp_wall;
 
 	$action = $bp->current_action;
+	// if we're on a different page than wall pass query_string as is
 	if ( $action != "just-me" ) {
-		// if we're on a different page than wall pass qs as is
-		return $qs;
+		return $query_string;
 	}
 
-	//modify it to include wall activities
 
-	// see if we have a page string
-	$page_str  = preg_match("/page=\d+/", $qs, $m);
-	$page = intval(str_replace("page=", "", $m[0])); // if so grab the number
-
+	// if we have a page string in the query_string
+	$page_str  = preg_match("/page=\d+/", $query_string, $m);
+	// so grab the number
+	$page = intval(str_replace("page=", "", $m[0])); 
 	// load the activities for this page
 	$activities = $bp_wall->get_wall_activities($page); 
-	$new_qs = "include=$activities";
-	return $new_qs;
+	$new_query_string = "include=$activities";
+	return $new_query_string;
 	
 }

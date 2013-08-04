@@ -19,7 +19,6 @@ else{
 	load_textdomain( 'bp-wall', $textdomain_global );
 }
 
-
 /**
  * BP_Wall Class
  */
@@ -214,78 +213,37 @@ class BP_Wall {
 	}
 	
 	/**
-	 * GET WALL ACTIVITES
+	 * Get the wall activites
 	 */
-	function get_wall_activities( $page=0, $per_page=20 ){
+	function get_wall_activities( $page=0, $per_page= 20 ){
 		global $bp, $wpdb;
-		$min = ( $page>0 ) ? ($page-1) * $per_page : 0;
-		$max = ( $page+1 ) * $per_page;
 
-		$per_page = bp_get_activity_per_page();
-		/*
-		if ( isset( $bp->loggedin_user ) && isset( $bp->loggedin_user->id ) && 
-			$bp->displayed_user->id == $bp->loggedin_user->id ) {
-		*/	
-		if ( bp_is_my_profile() ) {
-			$is_my_profile = true;
-		}
-		else {
-			$is_my_profile = false;
-		}
-
+		$page = ( $page>0 ) ? ($page-1) * $per_page : 0;
+		//+1 to make sure having total more than 20 ( force printing Load more button)
+		$per_page = $per_page + 1;
+	
 		$user_id = $bp->displayed_user->id;
+		$filter = $bp->displayed_user->domain;
 
-		$filter = addslashes($bp->displayed_user->fullname);
-		$friend_ids = friends_get_friend_user_ids($user_id);
+		$table_activity = $bp->activity->table_name; 
+		$table_activity_meta = $bp->activity->table_name_meta;
 
-		if (!empty($friend_ids)) 
-			$friend_id_list = implode( ",", ( $friend_ids ) );
+		$select_sql = "SELECT DISTINCT $table_activity.id";
+		$from_sql = " FROM $table_activity LEFT JOIN $table_activity_meta ON $table_activity.id = $table_activity_meta.activity_id";
 
-		$table = $wpdb->prefix."bp_activity";
+		$where_conditions = array();
+		$where_conditions['activity_sql'] = "( $table_activity.user_id = $user_id AND $table_activity.type!='activity_comment' AND $table_activity.type!='friends' )";
+		$where_conditions['friends_sql'] = "( $table_activity_meta.meta_value LIKE '%$filter%' AND $table_activity.type!='activity_comment' )";
+		$where_conditions['groups_sql'] = "( $table_activity.user_id = $user_id AND $table_activity.component = 'groups' )";
+		$where_conditions['friendships_sql'] = "( $table_activity.user_id = $user_id AND $table_activity.component = 'friends' )";
+		$where_conditions['mentions_sql'] = "( $table_activity.content LIKE '%$filter%' AND $table_activity.type!='activity_comment' )";
 
-		// Group Display code
-		$groups = BP_Groups_Member::get_group_ids( $user_id ) ;
+		$where_sql = 'WHERE ' . join( ' OR ', $where_conditions );
 
-		$valid_groups=array();
-		if (!empty($groups)) {
-			foreach ($groups['groups'] as $id) {
-				$group = new BP_Groups_Group( $id);
-				if ("public" == $group->status) {
-					$valid_groups[]=$id;
-				}
-			}
-		}
-
-		$valid_group_list = implode(",",$valid_groups);
-		if ( $is_my_profile && !empty( $friend_id_list ) ) {
-			$group_modifier =  "OR ( component='groups' AND user_id IN ( $user_id,$friend_id_list ) ) ";
-		}
-		else {
-			$group_modifier = "OR ( user_id = $user_id AND component='groups' ) ";
-		}
+		$pag_sql = $wpdb->prepare( "LIMIT %d, %d", absint( $page ), $per_page );
 		
-		if (!empty($friend_id_list)) {
-			$friends_modifier = $is_my_profile 
-				? "OR ( user_id IN ($friend_id_list) AND type!='activity_comment' ) " 
-				: "OR ( (component = 'activity' || component = 'groups') AND user_id IN ($friend_id_list) AND type!='activity_comment' AND type!='joined_group' AND type!='left_group' AND type!='created_group' AND type!='deleted_group') ";
-		}
-		else {
-			$friends_modifier = "";
-		}
+		$activities = $wpdb->get_results( apply_filters( 'bp_wall_activity_get_user_join_filter', "{$select_sql} {$from_sql} {$where_sql} ORDER BY date_recorded DESC {$pag_sql}", $select_sql, $from_sql, $where_sql, $pag_sql ) , ARRAY_A );
 		
-		$mentions_filter = like_escape( $bp->displayed_user->userdata->user_login );
-		$mentions_modifier = "OR ( component = 'activity' AND ACTION LIKE '%@$mentions_filter%' ) ";
-
-		$query = " SELECT id FROM $table 
-				  WHERE (	component = 'activity' AND user_id = $user_id AND type!='activity_comment' ) 
-						$friends_modifier 
-						$group_modifier
-						$mentions_modifier 
-			   ORDER BY date_recorded 
-			 DESC LIMIT $min, $max";
-
-		$activities  = $wpdb->get_results( $query, ARRAY_A );
-
 		if ( empty($activities ) ) return null;
 
 		$tmp = array();
@@ -294,7 +252,6 @@ class BP_Wall {
 			$tmp[] = $a["id"];
 		}
 		$activity_list = implode( ",", $tmp );
-
 		return $activity_list;
 
 	}
