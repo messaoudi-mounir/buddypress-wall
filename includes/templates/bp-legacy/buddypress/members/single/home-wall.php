@@ -40,7 +40,6 @@
 			bp_get_template_part( 'members/single/messages' );
 
 		elseif ( bp_is_user_profile() ) :
-			echo "-------";
 			bp_get_template_part( 'members/single/profile'  );
 
 		elseif ( bp_is_user_forums() ) :
@@ -51,7 +50,6 @@
 
 		// If nothing sticks, load a generic template
 		else :
-			echo "plugins";
 			bp_get_template_part( 'members/single/plugins'  );
 
 		endif;

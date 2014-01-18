@@ -28,9 +28,9 @@
 	<?php endif; ?>
 
 	<?php while ( bp_activities() ) : bp_the_activity(); ?>
-
+		<!-- bp-wall-start -->
 		<?php bp_wall_load_sub_template( array( 'activity/entry-wall.php' ), false ) ?>
-
+		<!-- bp-wall-end -->
 	<?php endwhile; ?>
 
 	<?php if ( bp_activity_has_more_items() ) : ?>

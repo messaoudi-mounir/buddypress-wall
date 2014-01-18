@@ -32,14 +32,20 @@ jQuery(document).ready(function(){
 			return;
 
         var keyCode = (e.keyCode) ? e.keyCode : e.which;
+
+        //if Shift+Enter keys was pressed
+       if ( keyCode == 13 && e.shiftKey ) {
+ 			jq(element).val(jq(element).val() + "\n").trigger("autosize.resize");// use the right id heret
+            return false;           
+
         //if ESC key was pressed
-       if ( keyCode == 27 ) {
+        } else if ( keyCode == 27 ) {
        		jq(element).val('');
-            jq(element).animate({'height':'18px'});//reset back to its original height
-            
-            return false;              
+            jq(element).animate({'height':'18px'});//reset back to its original height  
+            return false;    
+
         //if Enter pressed
-        } else if(keyCode==13) {
+        } else if(keyCode == 13) {
             bp_wall_post_comment(element);
             return false;
         }                    

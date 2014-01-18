@@ -25,11 +25,13 @@
 
 			<?php do_action( 'bp_before_directory_activity_content' ); ?>
 
+			<!-- bp-wall-start -->
 			<?php if ( is_user_logged_in() ) : ?>
 
 				<?php bp_wall_load_sub_template( array( 'activity/post-wall-form.php') ); ?>
 
 			<?php endif; ?>
+			<!-- bp-wall-end -->
 
 			<?php do_action( 'template_notices' ); ?>
 
@@ -69,7 +71,7 @@
 
 						<?php if ( bp_get_total_favorite_count_for_user( bp_loggedin_user_id() ) ) : ?>
 
-							<li id="activity-favorites"><a href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/favorites/'; ?>" title="<?php _e( "The activity I've marked as a Like.", 'buddypress' ); ?>"><?php printf( __( 'My Likes <span>%s</span>', 'buddypress' ), bp_get_total_favorite_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
+							<li id="activity-favorites"><a href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/favorites/'; ?>" title="<?php _e( "The activity I've Liked.", 'buddypress' ); ?>"><?php printf( __( 'My Likes <span>%s</span>', 'buddypress' ), bp_get_total_favorite_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
 
 						<?php endif; ?>
 
@@ -147,9 +149,9 @@
 			<?php do_action( 'bp_before_directory_activity_list' ); ?>
 
 			<div class="activity" role="main">
-
+				<!-- bp-wall-start -->
 				<?php bp_wall_load_sub_template( array( 'activity/activity-wall-loop.php' ) ); ?>
-
+				<!-- bp-wall-end -->
 			</div><!-- .activity -->
 
 			<?php do_action( 'bp_after_directory_activity_list' ); ?>

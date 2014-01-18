@@ -3,12 +3,21 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
+
+/**
+ * Activity screen 'News Feed' index
+ * 
+ */
+function bp_wall_activity_screen_newsfeed_activity() {
+    do_action( 'bp_wall_activity_screen_newsfeed_activity' );
+    bp_core_load_template( apply_filters( 'bp_wall_activity_template_newsfeed_activity', 'members/single/home' ) );
+}
+
 /**
  * filter the activity home, member home and group home and replace them
  * with the news templates 
  *
  */
-
 function bp_wall_load_template_filter( $found_template, $templates ) {
 	global $bp, $bp_deactivated;
 
@@ -37,7 +46,7 @@ function bp_wall_load_template_filter( $found_template, $templates ) {
 		return $found_template;
 	}
      */
-    
+    echo $templates[0];
     if ( $templates[0] == "members/single/home.php" ) {
         $template = 'members/single/home-wall.php';
         if ( file_exists( STYLESHEETPATH . '/' . $template ) )
@@ -170,11 +179,14 @@ if ( class_exists( 'BP_Theme_Compat' ) ) {
         }
     }
      
-    new BP_Wall_Theme_Compat();
+    //new BP_Wall_Theme_Compat();
 
     function bp_wall_add_template_stack( $templates ) {
        // if ( ( bp_is_user_activity() || bp_is_activity_component() || bp_is_group_home() ) && !bp_wall_is_bp_default() ) {
-        if ( ( bp_is_member() || bp_is_activity_component() || bp_is_group() ) && !bp_wall_is_bp_default() )
+        
+        if ( ( bp_is_user() || bp_is_activity_component() || bp_is_group() ) && !bp_wall_is_bp_default() )
+        //for bp 1.5 <
+        //if ( ( bp_is_member() || bp_is_activity_component() || bp_is_group() ) && !bp_wall_is_bp_default() )
             $templates[] = BP_WALL_PLUGIN_DIR . '/includes/templates/bp-legacy/buddypress';
        // }
 

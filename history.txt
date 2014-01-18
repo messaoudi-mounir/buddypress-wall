@@ -15,3 +15,14 @@ Version 0.8.2 ( August 04, 2013 )
 - Remove activity filter select from wall Page template
 
 
+Version 0.9 ( January 18, 2014 )
+--------------------------------------------------------------
+
+- Fix bug, Activity feed has numbers after username.
+- Fix bug, "Timeline" tab contain only "personal activity"
+- Fix bug, "New Feed" contain "My friends + My groups".
+- Translation ready.
+- Add Event keyboard (Shift+Enter) for new line comment.
+
+
+

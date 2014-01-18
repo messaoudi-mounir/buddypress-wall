@@ -161,12 +161,13 @@ function bp_wall_dtheme_post_update() {
 	}
 
 	if ( empty( $_POST['object'] ) && function_exists( 'bp_activity_post_update' ) ) {
-
-		if(!bp_is_home()&&bp_is_member())
-		$content="@". bp_get_displayed_user_username()." ".$_POST['content'];
+		
+		if( !bp_is_my_profile() && bp_is_user() )   //bp > 1.5
+		//if( !bp_is_home() && bp_is_member() )   //bp 1.5 <
+			$content="@". bp_get_displayed_user_username()." ".$_POST['content'];
 		else
-		$content=$_POST['content'];
-		$activity_id = bp_activity_post_update( array( 'content' => $content ) );
+			$content=$_POST['content'];
+			$activity_id = bp_activity_post_update( array( 'content' => $content ) );
 	} elseif ( $_POST['object'] == 'groups' ) {
 		if ( !empty( $_POST['item_id'] ) && function_exists( 'groups_post_update' ) )
 		$activity_id = groups_post_update( array( 'content' => $_POST['content'], 'group_id' => $_POST['item_id'] ) );

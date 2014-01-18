@@ -116,7 +116,7 @@ function bp_wall_input_filter( &$activity ) {
 		$displayed_user_url  = '<a href="'.$displayed_user->domain.'">'.$displayed_user->fullname.'\'s</a>';
 
 		// if a user is on his own page it is an update
-		$new_action = sprintf( __( '%s1 wrote on %s2 Wall', 'bp-wall' ), $user_url, $displayed_user_url);
+		$new_action = sprintf( __( '%1$s wrote on %2$s Wall', 'bp-wall' ), $user_url, $displayed_user_url);
 		//$new_action = $user_url. " wrote on ". $displayed_user_url." Wall";
 	}
 	
@@ -135,18 +135,24 @@ function bp_wall_qs_filter( $query_string ) {
 	global $bp, $bp_wall;
 
 	$action = $bp->current_action;
+
+
 	// if we're on a different page than wall pass query_string as is
-	if ( $action != "just-me" ) {
+	if ( $action != "just-me" &&  $action != "news-feed" ) {
 		return $query_string;
 	}
-
 
 	// if we have a page string in the query_string
 	$page_str  = preg_match("/page=\d+/", $query_string, $m);
 	// so grab the number
 	$page = intval(str_replace("page=", "", $m[0])); 
+
 	// load the activities for this page
-	$activities = $bp_wall->get_wall_activities($page); 
+	if ( $action == "just-me" )
+		$activities = $bp_wall->get_timeline_activities($page); 
+	elseif ( $action == "news-feed" )
+		$activities = $bp_wall->get_newsfeed_activities($page); 
+
 	$new_query_string = "include=$activities";
 	return $new_query_string;
 	

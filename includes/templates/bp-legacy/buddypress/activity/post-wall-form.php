@@ -17,7 +17,8 @@
 		<p>You need to <a href="<?php echo site_url( 'wp-login.php' ) ?>">log in</a> <?php if ( bp_get_signup_allowed() ) : ?> or <?php printf( __( ' <a class="create-account" href="%s" title="Create an account">create an account</a>', 'buddypress' ), site_url( BP_REGISTER_SLUG . '/' ) ) ?><?php endif; ?> to post to this user's Wall.</p>
 	</div>
 
-	<?php elseif (!bp_is_home() && !is_super_admin() && ( bp_is_user() && !$bp_wall->is_myfriend($bp->displayed_user->id) ) ) : ?>
+	<?php elseif (!bp_is_my_profile() && !is_super_admin() && ( bp_is_user() && !$bp_wall->is_myfriend($bp->displayed_user->id) ) ) : ?>
+	<?php //elseif (!bp_is_home() && !is_super_admin() && ( bp_is_user() && !$bp_wall->is_myfriend($bp->displayed_user->id) ) ) : ?>
 
 	<div id="message" class="bp-template-notice">
 		<p><?php printf( __( "You and %s are not friends. Please request friendship to post to their Wall.", 'bp-wall' ), bp_get_displayed_user_fullname() ) ?></p>
@@ -50,8 +51,10 @@
 	</div>
 	
 	<p class="activity-greeting"><?php if ( bp_is_group() )
-			printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname() );
-		elseif( bp_is_page( BP_ACTIVITY_SLUG ) || bp_is_my_profile() && bp_is_user_activity() )
+		printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname() );
+		
+		elseif( bp_is_my_profile() && bp_is_user_activity() )		
+		//elseif( bp_is_page( BP_ACTIVITY_SLUG ) || bp_is_my_profile() && bp_is_user_activity() )
 			printf( __( "What's new, %s?", 'buddypress' ), bp_get_user_firstname() );
 		elseif( !bp_is_my_profile() && bp_is_user_activity() )
 			printf( __( "Write something to %s?", 'buddypress' ), bp_get_displayed_user_fullname() );
@@ -67,7 +70,8 @@
 				<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php _e( 'Post Update', 'buddypress' ); ?>" />
 			</div>
 
-			<?php if ( bp_is_active( 'groups' ) && !bp_is_my_profile() && !bp_is_group() && !bp_is_member() ) : ?>
+			<?php if ( bp_is_active( 'groups' ) && !bp_is_my_profile() && !bp_is_group() && !bp_is_user() ) : ?>
+			<?php //if ( bp_is_active( 'groups' ) && !bp_is_my_profile() && !bp_is_group() && !bp_is_member() ) : ?>
 
 				<div id="whats-new-post-in-box">
 

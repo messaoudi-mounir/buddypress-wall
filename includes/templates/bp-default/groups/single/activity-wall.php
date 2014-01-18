@@ -35,20 +35,21 @@
 </div><!-- .item-list-tabs -->
 
 <?php do_action( 'bp_before_group_activity_post_form' ); ?>
-
+<!-- bp-wall-start -->
 <?php if ( is_user_logged_in() ) : ?>   
 
 	<?php bp_wall_load_sub_template( array('activity/post-wall-form.php'), true ) ?> 
 
 <?php endif; ?>
+<!-- bp-wall-end -->
 
 <?php do_action( 'bp_after_group_activity_post_form' ); ?>
 <?php do_action( 'bp_before_group_activity_content' ); ?>
 
 <div class="activity single-group" role="main">
-
+	<!-- bp-wall-start -->
 	<?php bp_wall_load_sub_template( array( 'activity/activity-wall-loop.php' ) ); ?>
-
+	<!-- bp-wall-end -->
 </div><!-- .activity.single-group -->
 
 <?php do_action( 'bp_after_group_activity_content' ); ?>

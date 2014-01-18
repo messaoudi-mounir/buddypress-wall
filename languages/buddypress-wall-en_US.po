@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: buddypress-activity-privacy\n"
-"POT-Creation-Date: 2013-05-14 00:39-0000\n"
-"PO-Revision-Date: 2013-05-14 00:39-0000\n"
+"POT-Creation-Date: 2014-01-18 13:17-0000\n"
+"PO-Revision-Date: 2014-01-18 13:17-0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,65 +12,566 @@ msgstr ""
 "X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: C:\\work\\php\\wamp\\www\\wordpressdev\\wp-content"
-"\\plugins\\buddypress-activity-privacy\n"
+"\\plugins\\buddypress-wall\n"
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/loader.php:49
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/loader.php:54
 msgid ""
-"You cannot enable BuddyPress Activity Privacy because <strong>BuddyPress</"
-"strong> is not active. Please install and activate BuddyPress before trying "
-"to activate Buddypress Activity Privacy again."
+"You cannot enable BuddyPress Wall <strong>BuddyPress</strong> is not active. "
+"Please install and activate BuddyPress before trying to activate Buddypress "
+"Wall."
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-actions.php:66
-msgid "Privacy: "
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:159
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:206
+msgid "Please enter some content to post."
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-integrations.php:74
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-integrations.php:86
-msgid "My Followers"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:178
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:221
+msgid "There was a problem posting your update, please try again."
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-integrations.php:92
-msgid "My Followers in Group"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:258
+msgid "person"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:61
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:99
-msgid "Anyone"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:258
+msgid "people"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:67
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:105
-msgid "Logged In Users"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:259
+msgid "like"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:76
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:114
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:259
+msgid "likes"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:276
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:296
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:74
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/entry-wall.php:72
+msgid "Unlike"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:278
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-actions.php:294
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:70
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/entry-wall.php:68
+msgid "Like"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:32
+msgid "Welcome to Buddypress Wall"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:33
+msgid "Welcome to BP Activity Privacy"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:147
+#, php-format
+msgid "Welcome to BuddyPress Wall %s"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:148
+#, php-format
+msgid ""
+"Thank you for upgrading to the latest version of BP Wall! <br \\> BP Wall %s "
+"is ready to turn your site to a Facebook style wall posting."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:149
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:153
+msgid "About"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:158
+msgid "Another way to show & use Buddypress Activity Stream"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:161
+msgid ""
+"BP Wall is Buddypress plugin to personlize the activity component and try "
+"togive a feel of stream you see on most of the social networks(like Facebook "
+"home page, or your orkut home page etc)."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:163
+msgid ""
+"The plugin simplify the Activity Streams by using the Timeline and NewsFeed "
+"pages, a Facebook style activity commenting system and ."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:164
+msgid ""
+"BP Wall is Buddypress plugin to personlize the Activity Component stream "
+"allow members to use activity as wire, it's allows members to post when they "
+"are visiting the Timeline of there friends."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:165
+msgid ""
+"Each Member have his own Timeline Activity page who show Personal acitivity. "
+"News Feed page merge the friends and groups activites in one activity "
+"streams."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:166
+msgid "Favorite posts renamed \"My Likes\"."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:167
+msgid "The plugin add a new Facebook Style Activity Commenting system."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:173
+msgid "How it's Work ?"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:177
+msgid ""
+"Once installed and activated, BuddyPress Wall (BP-Wall) turn your Buddypress "
+"Activity Component to an activity stream similar to a Facebook \"Wall\"."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:179
+msgid ""
+"The members can post status, updates and reply on each others friends walls."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:180
+msgid ""
+"Each Member have his own Timeline Activity page who aggregate all of his "
+"activities across a site."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:181
+msgid ""
+"The News Feed page merge friends and group's activites in one activity "
+"stream."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:182
+msgid ""
+"BP-Wall turn the Favorite/Unfavorite module of Buddypress to a facebook \"I "
+"Like/Unlike\" system."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:183
+msgid "BP-Wall add a new comment system similar to Facebook."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:190
+msgid "Member Activity Timeline"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:194
+msgid ""
+"The Timeline subnav show only the personal activity of the current/displayed "
+"member :"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:196
+msgid "Status update activities,"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:197
+msgid "Activities/Updates in groups,"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:198
+msgid "All others activities posted/lunched by the current/displayed member."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:204
+msgid "Member Activity News feed"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:207
+msgid "The  News feed subanv contain all the activity of :"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:209
 msgid "My Friends"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:84
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:153
-msgid "Admins Only"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:210
+msgid "My Groups"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:91
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:160
-msgid "Only me"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:211
+msgid "Friends Posts in my Wall"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:121
-msgid "My Friends in Group"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:217
+msgid "From \"Favorite/Unfavorite\" to \"Like/Unlike\""
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:131
-msgid "Group Members"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:221
+msgid ""
+"BP-Wall turn the Favorite/Unfavorite module of Buddypress to a facebook "
+"\"Like/Unlike\" system."
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:138
-msgid "Group Moderators"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:222
+msgid "Buddypress members can find all \"Liked\" posts in My Likes subnav."
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-activity-privacy/includes/bp-activity-privacy-loader.php:145
-msgid "Group Admins"
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:227
+msgid "Facebook Style Activity Commenting System"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:231
+msgid ""
+"BP Wall make the BuddyPress activity stream commenting system look/work like "
+"facebook activity commenting."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:233
+msgid "To insert new line press Shift + Enter."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:234
+msgid "To send the comment press Enter."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-admin.php:235
+msgid "To cancel the comment press Esc."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-cssjs.php:27
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:147
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:204
+msgid "My Likes"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-cssjs.php:28
+msgid "Like this post"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-cssjs.php:29
+msgid "Unlike this post"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-filters.php:119
+#, php-format
+msgid "%1$s wrote on %2$s Wall"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-functions.php:30
+#, php-format
+msgid "<ul><li class=\"activity-like-count\">%s person like this.</li></ul>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-functions.php:32
+#, php-format
+msgid "<ul><li class=\"activity-like-count\">%s people likes this.</li></ul>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:104
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:123
+msgid "Wall"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:129
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:181
+msgid "Timeline"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:135
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:194
+msgid "News Feed"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:142
+msgid "My mentions"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/bp-wall-loader.php:213
+msgid "My Mentions"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/activity-wall-loop.php:39
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/activity-wall-loop.php:28
+msgid "Load More"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/activity-wall-loop.php:52
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/activity-wall-loop.php:42
+msgid "Sorry, there was no activity found. Please try a different filter."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:39
+msgid "In reply to: "
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:39
+msgid "View Thread / Permalink"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:39
+msgid "View"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:62
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/entry-wall.php:60
+#, php-format
+msgid "Comment <span>%s</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:112
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/entry-wall.php:110
+msgid "Write a comment"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:115
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/entry-wall.php:113
+msgid "Post"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/entry-wall.php:115
+msgid "or press esc to cancel."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:22
+msgid "Site Activity"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:42
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:19
+msgid "The public activity for everyone on this site."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:42
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:19
+#, php-format
+msgid "All Members <span>%s</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:52
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:29
+msgid "The activity of my friends only."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:52
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:29
+#, php-format
+msgid "My Friends <span>%s</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:64
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:41
+msgid "The activity of groups I am a member of."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:64
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:41
+#, php-format
+msgid "My Groups <span>%s</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:74
+msgid "The activity I've Liked."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:74
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:51
+#, php-format
+msgid "My Likes <span>%s</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:85
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:91
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:63
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:69
+msgid "Activity that I have been mentioned in."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:85
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:91
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:63
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:69
+msgid "Mentions"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:103
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/groups/single/activity-wall.php:14
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:81
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/groups/single/activity-wall.php:3
+msgid "RSS Feed"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:103
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/groups/single/activity-wall.php:14
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:81
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/groups/single/activity-wall.php:3
+msgid "RSS"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:108
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/groups/single/activity-wall.php:19
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:21
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:86
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/groups/single/activity-wall.php:8
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:18
+msgid "Show:"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:110
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/groups/single/activity-wall.php:21
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:23
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:88
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/groups/single/activity-wall.php:10
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:20
+msgid "Everything"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:111
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/groups/single/activity-wall.php:22
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:24
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:89
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/groups/single/activity-wall.php:11
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:21
+msgid "Updates"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:115
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:30
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:93
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:27
+msgid "Posts"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:116
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:31
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:94
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:28
+msgid "Comments"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:122
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/groups/single/activity-wall.php:25
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:46
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:100
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/groups/single/activity-wall.php:14
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:43
+msgid "Forum Topics"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:123
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/groups/single/activity-wall.php:26
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:47
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:101
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/groups/single/activity-wall.php:15
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:44
+msgid "Forum Replies"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:129
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:53
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:107
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:50
+msgid "New Groups"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:130
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/groups/single/activity-wall.php:29
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:54
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:108
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/groups/single/activity-wall.php:18
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:51
+msgid "Group Memberships"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:136
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/members/single/activity-wall.php:38
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:114
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/members/single/activity-wall.php:35
+msgid "Friendships"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/index-wall.php:140
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:118
+msgid "New Members"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:16
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:17
+#, php-format
+msgid ""
+" <a class=\"create-account\" href=\"%s\" title=\"Create an account\">create "
+"an account</a>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:23
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:24
+#, php-format
+msgid ""
+"You and %s are not friends. Please request friendship to post to their Wall."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:28
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:29
+#, php-format
+msgid ""
+"You are not a member in group %s. Please join the group to post to their "
+"Wall."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:41
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:43
+#, php-format
+msgid ""
+"You are mentioning %s in a new update, this user will be sent a notification "
+"of your message."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:52
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:54
+#, php-format
+msgid "What's new in %s, %s?"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:56
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:58
+#, php-format
+msgid "What's new, %s?"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:58
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:60
+#, php-format
+msgid "Write something to %s?"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:68
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:70
+msgid "Post Update"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:77
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:78
+msgid "Post in"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-default/activity/post-wall-form.php:80
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/post-wall-form.php:81
+msgid "My Profile"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/entry-wall.php:52
+msgid "View Conversation"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/entry-wall.php:113
+msgid "Cancel"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-wall/includes/templates/bp-legacy/buddypress/activity/index-wall.php:51
+msgid "The activity I've liked."
 msgstr ""

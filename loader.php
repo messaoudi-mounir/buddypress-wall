@@ -4,12 +4,12 @@ Plugin Name: BuddyPress Wall
 Plugin URI: 
 Description: Turn your Buddypress Activity Component to a Facebook-style Wall.
 Profiles with Facebook-style walls
-Version: 0.8.2
+Version: 0.9
 Requires at least:  WP 3.4, BuddyPress 1.5
-Tested up to: BuddyPress 1.7, 1.8
+Tested up to: BuddyPress 1.9
 License: GNU General Public License 2.0 (GPL) http://www.gnu.org/licenses/gpl.html
 Author: Meg@Info
-Author URI: http://profiles.wordpress.org/megainfo 
+Author URI: http://www.ibuddypress.net
 Network: true
 */
 
@@ -17,7 +17,7 @@ Network: true
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /*************************************************************************************************************
- --- BuddyPress Wall 0.8.2 ---
+ --- BuddyPress Wall 0.9 ---
  *************************************************************************************************************/
 
 // Define a constant that can be checked to see if the component is installed or not.
@@ -25,10 +25,16 @@ define( 'BP_WALL_IS_INSTALLED', 1 );
 
 // Define a constant that will hold the current version number of the component
 // This can be useful if you need to run update scripts or do compatibility checks in the future
-define( 'BP_WALL_VERSION', '0.8.2' );
+define( 'BP_WALL_VERSION', '0.9' );
 
 // Define a constant that we can use to construct file paths throughout the component
 define( 'BP_WALL_PLUGIN_DIR', dirname( __FILE__ ) );
+
+// Define a constant that we can use to construct the welcome page
+define( 'BP_WALL_PLUGIN_FILE_LOADER',  __FILE__ );
+
+// Define a constant that we can use as plugin url
+define( 'BP_WALL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 define ( 'BP_WALL_DB_VERSION', '1.0' );
 
@@ -47,12 +53,17 @@ function bp_wall_activate() {
 		//deactivate_plugins( basename( __FILE__ ) ); // Deactivate this plugin
 		die( _e( 'You cannot enable BuddyPress Wall <strong>BuddyPress</strong> is not active. Please install and activate BuddyPress before trying to activate Buddypress Wall.' , 'bp-wall' ) );
 	}	
+
+	// Add the transient to redirect
+	set_transient( '_bp_wall_activation_redirect', true, 30 );
+	do_action( 'bp_wall_activation' );
 }
 register_activation_hook( __FILE__, 'bp_wall_activate' );
 
 /* On deacativation, clean up anything your component has added. */
 function bp_wall_deactivate() {
 	/* You might want to delete any options or tables that your component created. */
+	do_action( 'bp_wall_deactivation' );
 }
 register_deactivation_hook( __FILE__, 'bp_wall_deactivate' );
 
@@ -87,4 +98,3 @@ function bp_wall_template_part_filter( $templates, $slug, $name ) {
 function bp_wall_filter_template_content() {
    // bp_buffer_template_part( 'activity/index-wall' );
 }
-

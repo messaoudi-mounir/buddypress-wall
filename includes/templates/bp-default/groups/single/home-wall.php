@@ -47,8 +47,9 @@
 						if     ( ! empty( $custom_front   ) ) : load_template( $custom_front, true );
 
 						// Default to activity
+						//<!-- bp-wall-end -->
 						elseif ( bp_is_active( 'activity' ) ) : bp_wall_load_sub_template( array( 'groups/single/activity-wall.php' ), true );
-
+						//<!-- bp-wall-end -->
 						// Otherwise show members
 						elseif ( bp_is_active( 'members'  ) ) : locate_template( array( 'groups/single/members.php'  ), true );
 
