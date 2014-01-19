@@ -46,7 +46,6 @@ function bp_wall_load_template_filter( $found_template, $templates ) {
 		return $found_template;
 	}
      */
-    echo $templates[0];
     if ( $templates[0] == "members/single/home.php" ) {
         $template = 'members/single/home-wall.php';
         if ( file_exists( STYLESHEETPATH . '/' . $template ) )

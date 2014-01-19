@@ -24,5 +24,11 @@ Version 0.9 ( January 18, 2014 )
 - Translation ready.
 - Add Event keyboard (Shift+Enter) for new line comment.
 
+Version 0.9.1 ( January 19, 2014 )
+--------------------------------------------------------------
+
+- Remove debug messages.
+
+
 
 

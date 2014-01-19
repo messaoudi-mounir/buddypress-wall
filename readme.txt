@@ -3,7 +3,7 @@ Contributors: megainfo
 Tags: buddypress, activity, wall, facebook, facebook style, facebook comment system, wall mode, like, unlike
 Requires at least: WordPress 3.4, BuddyPress 1.5
 Tested up to: WordPress 3.8 / BuddyPress 1.9
-Stable tag: 0.9
+Stable tag: 0.9.1
 
 
 == Description ==
@@ -80,6 +80,8 @@ For bug reports or to add patches or translation files, visit the [Buddypress Wa
 
 
 == Changelog ==
+= 0.9.1 =
+* Remove debug messages.
 
 = 0.9 =
 * Fix bug, Activity feed has numbers after username.
